@@ -44,12 +44,12 @@ export default function Reports(){
       </motion.div>
       <div className="grid gap-4 md:grid-cols-2">
   {(Array.isArray(reports) ? reports : []).map((r)=> (
-          <motion.div key={r.id} initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} className="card p-4">
+          <motion.div key={r?.id || Math.random()} initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} className="card p-4">
             <div className="flex items-center justify-between">
               <div>
-                <div className="font-semibold">GRM Report: {r.summary.pickupId}</div>
-                <div className="mt-1 text-sm text-zinc-400">Client: {r.summary.clientName}</div>
-                <div className="mt-1 text-sm text-zinc-400">Date: {r.summary.pickupDate || '—'}</div>
+                <div className="font-semibold">GRM Report: {r?.summary?.pickupId ?? '—'}</div>
+                <div className="mt-1 text-sm text-zinc-400">Client: {r?.summary?.clientName ?? '—'}</div>
+                <div className="mt-1 text-sm text-zinc-400">Date: {r?.summary?.pickupDate || '—'}</div>
                 <div className="mt-1 text-sm">Status: <span className="text-green-400">Complete (100%)</span></div>
               </div>
               <div className="flex gap-2">
