@@ -40,6 +40,8 @@ export default function Pickup(){
   async function handleSubmit(){
     setSaving(true)
     try{
+      // Diagnostic: log baseURL and full request URL so deployed clients show the exact endpoint being called
+      try { console.debug('api baseURL:', (api as any).defaults.baseURL, 'POST', ((api as any).defaults.baseURL || '') + '/materials') } catch(e) {}
       const { data } = await api.post('/materials', { ...form, materials })
       setResult(data)
       if(files.length){
@@ -54,7 +56,9 @@ export default function Pickup(){
       console.error('save pickup error', err)
       // Try to show server error message when available
       const serverMsg = err?.response?.data?.error || err?.response?.data?.message || err?.message
-      alert('Failed to save pickup: ' + (serverMsg || 'Unknown error'))
+      const status = err?.response?.status
+      console.debug('save pickup response status:', status, 'serverMsg:', serverMsg)
+      alert('Failed to save pickup: ' + (serverMsg || ('HTTP ' + (status || 'error'))))
     }finally{
       setSaving(false)
     }
