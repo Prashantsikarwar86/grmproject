@@ -1,0 +1,72 @@
+[
+  {
+    "id": "87ed6431-b910-4dc1-9049-5464bdeaa20c",
+    "pickupId": "45t6789",
+    "fileType": "invoice",
+    "originalName": "Prashantresume (1).pdf",
+    "storedName": "Prashantresume__1__1759824488479_6d514532-0009-4674-98d4-c064fda42ea1.pdf",
+    "size": 579987,
+    "mimeType": "application/pdf",
+    "uploadedAt": "2025-10-07T08:08:08.490Z"
+  },
+  {
+    "id": "d38be2be-80d3-4c58-b067-dba16dd2c784",
+    "pickupId": "8976",
+    "fileType": "invoice",
+    "originalName": "Prashantresume (1).pdf",
+    "storedName": "Prashantresume__1__1759824677408_8849ebcf-b671-4fd9-915d-317712a12728.pdf",
+    "size": 579987,
+    "mimeType": "application/pdf",
+    "uploadedAt": "2025-10-07T08:11:17.414Z"
+  },
+  {
+    "id": "10afe383-ee8c-424f-b6af-2768dc5079e5",
+    "pickupId": "67897",
+    "fileType": "invoice",
+    "originalName": "Prashantresume (1).pdf",
+    "storedName": "Prashantresume__1__1759824786635_7d224534-0b5c-4486-bb7e-4bfffe912a7b.pdf",
+    "size": 579987,
+    "mimeType": "application/pdf",
+    "uploadedAt": "2025-10-07T08:13:06.641Z"
+  },
+  {
+    "id": "6834d7eb-313a-4338-aaa6-69ed87973fa1",
+    "pickupId": "456789",
+    "fileType": "invoice",
+    "originalName": "IMG_6175.PNG",
+    "storedName": "IMG_6175_1759825349315_871d01f2-0e32-4abf-a913-924dd3830292.PNG",
+    "size": 802684,
+    "mimeType": "image/png",
+    "uploadedAt": "2025-10-07T08:22:29.321Z"
+  },
+  {
+    "id": "5e29c4fa-0ddc-43ac-b4c1-4cfaeef63a7e",
+    "pickupId": "98876",
+    "fileType": "invoice",
+    "originalName": "WhatsApp Image 2025-09-16 at 11.49.31_44951904.jpg",
+    "storedName": "WhatsApp_Image_2025-09-16_at_11_49_31_44951904_1759825933108_a92b42ee-4530-428a-8e25-e9c52045d98a.jpg",
+    "size": 460579,
+    "mimeType": "image/jpeg",
+    "uploadedAt": "2025-10-07T08:32:13.112Z"
+  },
+  {
+    "id": "6bec0bd1-1e6a-42a1-9edd-2a25a0c700d7",
+    "pickupId": "89767",
+    "fileType": "invoice",
+    "originalName": "IMG_6175.PNG",
+    "storedName": "IMG_6175_1759831675347_4e938f29-cf07-457c-af72-3445f5376b5b.PNG",
+    "size": 802684,
+    "mimeType": "image/png",
+    "uploadedAt": "2025-10-07T10:07:55.354Z"
+  },
+  {
+    "id": "2ab87118-92d8-4e13-9ac7-53dc89d71355",
+    "pickupId": "99998",
+    "fileType": "invoice",
+    "originalName": "GRNproject.7z",
+    "storedName": "GRNproject_1759835907622_b0099977-5234-4e11-af7f-a8aa23979b05.7z",
+    "size": 33260512,
+    "mimeType": "application/x-compressed",
+    "uploadedAt": "2025-10-07T11:18:27.832Z"
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "id": "5e9d1d71-4980-4a8c-a426-bb26326ad5f6",
+    "pickupId": "45t6789",
+    "pickupDate": "2025-10-07",
+    "clientName": "456789",
+    "clientContact": "4567890-5678",
+    "vehicleNumber": "3456789",
+    "driverName": "45678olkmnbvfder",
+    "vehicleCharges": 45678,
+    "labourCharges": 4567889,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "",
+        "materialType": "",
+        "quantity": 1,
+        "weight": 0,
+        "unitPrice": 0,
+        "totalValue": 0,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 1,
+      "totalWeight": 0,
+      "totalValue": 0
+    },
+    "createdAt": "2025-10-07T08:08:08.455Z",
+    "updatedAt": "2025-10-07T08:08:08.455Z"
+  },
+  {
+    "id": "d71a28e4-dd88-4050-a4fb-39706ff81115",
+    "pickupId": "8976",
+    "pickupDate": "2025-10-07",
+    "clientName": "prashant enterprises ",
+    "clientContact": "6398870328",
+    "vehicleNumber": "up80gt3611",
+    "driverName": "prashant ",
+    "vehicleCharges": 1300,
+    "labourCharges": 5000,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "prashant",
+        "materialType": "laptop",
+        "quantity": 455,
+        "weight": 6,
+        "unitPrice": 13,
+        "totalValue": 5915,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 455,
+      "totalWeight": 6,
+      "totalValue": 5915
+    },
+    "createdAt": "2025-10-07T08:11:17.394Z",
+    "updatedAt": "2025-10-07T08:11:17.394Z"
+  },
+  {
+    "id": "8fc982ac-56de-4383-b63b-110fffd899ef",
+    "pickupId": "67897",
+    "pickupDate": "2025-10-07",
+    "clientName": "prashant enterprises ",
+    "clientContact": "6398870328",
+    "vehicleNumber": "up80gt3611",
+    "driverName": "prashant ",
+    "vehicleCharges": 5678,
+    "labourCharges": 56787,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "prashant",
+        "materialType": "server",
+        "quantity": 5,
+        "weight": 6,
+        "unitPrice": 500,
+        "totalValue": 2500,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 5,
+      "totalWeight": 6,
+      "totalValue": 2500
+    },
+    "createdAt": "2025-10-07T08:13:06.623Z",
+    "updatedAt": "2025-10-07T08:13:06.623Z"
+  },
+  {
+    "id": "685bc100-cd30-406e-8198-870cea1abab5",
+    "pickupId": "456789",
+    "pickupDate": "2025-10-07",
+    "clientName": "devit",
+    "clientContact": "6398870328",
+    "vehicleNumber": "up80gt3611",
+    "driverName": "prashant ",
+    "vehicleCharges": 6438,
+    "labourCharges": 62327,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "prashant",
+        "materialType": "keyboard",
+        "quantity": 78,
+        "weight": 67889,
+        "unitPrice": 6789,
+        "totalValue": 529542,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 78,
+      "totalWeight": 67889,
+      "totalValue": 529542
+    },
+    "createdAt": "2025-10-07T08:22:29.305Z",
+    "updatedAt": "2025-10-07T08:22:29.305Z"
+  },
+  {
+    "id": "b4501f57-7f2c-4405-b4e8-120617441d23",
+    "pickupId": "98876",
+    "pickupDate": "2025-10-07",
+    "clientName": "prashant enterprises ",
+    "clientContact": "6398870328",
+    "vehicleNumber": "up80gt3611",
+    "driverName": "raj kumar  ",
+    "vehicleCharges": 0,
+    "labourCharges": 0,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "prashant",
+        "materialType": "monitor",
+        "quantity": 167,
+        "weight": 567,
+        "unitPrice": 56,
+        "totalValue": 9352,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 167,
+      "totalWeight": 567,
+      "totalValue": 9352
+    },
+    "createdAt": "2025-10-07T08:32:13.097Z",
+    "updatedAt": "2025-10-07T08:32:13.097Z"
+  },
+  {
+    "id": "f2261c4d-6316-4c2f-97d3-1cc3d6c15809",
+    "pickupId": "89767",
+    "pickupDate": "2025-10-07",
+    "clientName": "Narendra  enterprises ",
+    "clientContact": "6398870328",
+    "vehicleNumber": "up80gt3611",
+    "driverName": "ayush singh ",
+    "vehicleCharges": 0,
+    "labourCharges": 0,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "deepak",
+        "materialType": "laptop",
+        "quantity": 200,
+        "weight": 568,
+        "unitPrice": 56,
+        "totalValue": 11200,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 200,
+      "totalWeight": 568,
+      "totalValue": 11200
+    },
+    "createdAt": "2025-10-07T10:07:55.335Z",
+    "updatedAt": "2025-10-07T10:07:55.335Z"
+  },
+  {
+    "id": "164e2978-41c3-4bde-83ec-a29899ef446e",
+    "pickupId": "99998",
+    "pickupDate": "2025-10-07",
+    "clientName": "rajveer",
+    "clientContact": "9758620096",
+    "vehicleNumber": "up80gt3611",
+    "driverName": "anshu",
+    "vehicleCharges": 2000,
+    "labourCharges": 800,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "electronics ",
+        "materialType": "laptop",
+        "quantity": 180,
+        "weight": 600,
+        "unitPrice": 16000,
+        "totalValue": 2880000,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 180,
+      "totalWeight": 600,
+      "totalValue": 2880000
+    },
+    "createdAt": "2025-10-07T11:18:27.610Z",
+    "updatedAt": "2025-10-07T11:18:27.610Z"
+  }
+]

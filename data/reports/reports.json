@@ -1,0 +1,62 @@
+[
+  {
+    "id": "456789-1759830859701",
+    "pickupId": "456789",
+    "createdAt": "2025-10-07T09:54:19.701Z",
+    "summary": {
+      "pickupId": "456789",
+      "pickupDate": "2025-10-07",
+      "clientName": "devit",
+      "totals": {
+        "totalProducts": 78,
+        "totalWeight": 67889,
+        "totalValue": 529542
+      },
+      "charges": {
+        "vehicleCharges": 6438,
+        "labourCharges": 62327
+      },
+      "grandTotal": 598307
+    }
+  },
+  {
+    "id": "98876-1759831072377",
+    "pickupId": "98876",
+    "createdAt": "2025-10-07T09:57:52.377Z",
+    "summary": {
+      "pickupId": "98876",
+      "pickupDate": "2025-10-07",
+      "clientName": "prashant enterprises ",
+      "totals": {
+        "totalProducts": 167,
+        "totalWeight": 567,
+        "totalValue": 9352
+      },
+      "charges": {
+        "vehicleCharges": 0,
+        "labourCharges": 0
+      },
+      "grandTotal": 9352
+    }
+  },
+  {
+    "id": "89767-1759831705803",
+    "pickupId": "89767",
+    "createdAt": "2025-10-07T10:08:25.803Z",
+    "summary": {
+      "pickupId": "89767",
+      "pickupDate": "2025-10-07",
+      "clientName": "Narendra  enterprises ",
+      "totals": {
+        "totalProducts": 200,
+        "totalWeight": 568,
+        "totalValue": 11200
+      },
+      "charges": {
+        "vehicleCharges": 0,
+        "labourCharges": 0
+      },
+      "grandTotal": 11200
+    }
+  }
+]

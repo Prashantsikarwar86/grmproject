@@ -1,0 +1,38 @@
+[
+  {
+    "id": "aa304981-6727-420b-8c34-81a6cdb00214",
+    "pickupId": "56789",
+    "productId": "56ui",
+    "quantitySold": 567,
+    "materialType": "laptop",
+    "name": null,
+    "date": "2025-10-07T07:39:16.851Z"
+  },
+  {
+    "id": "95a12df4-9de9-47cb-9b86-9d081388e942",
+    "pickupId": "567896",
+    "productId": "56ui",
+    "quantitySold": 567,
+    "materialType": "charger",
+    "name": null,
+    "date": "2025-10-07T08:06:34.195Z"
+  },
+  {
+    "id": "2014eeea-d72e-4051-81da-ab690b738b92",
+    "pickupId": "56789",
+    "productId": "56ui",
+    "quantitySold": 100,
+    "materialType": "monitor",
+    "name": null,
+    "date": "2025-10-07T08:21:11.481Z"
+  },
+  {
+    "id": "946aa2a3-bf65-4f11-aef9-fbc485eec6c2",
+    "pickupId": "PU123",
+    "productId": "pu89",
+    "quantitySold": 700,
+    "materialType": "desktop",
+    "name": null,
+    "date": "2025-10-07T08:34:49.377Z"
+  }
+]

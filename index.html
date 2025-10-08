@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deshwal Waste Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>DWM System</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#material-entry"><i class="fas fa-clipboard-list"></i> Material Entry</a></li>
+                <li><a href="#reports"><i class="fas fa-chart-bar"></i> GRM Reports</a></li>
+                <li><a href="#files"><i class="fas fa-file-upload"></i> File Management</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            <div class="user-info">
+                <img src="https://via.placeholder.com/50" alt="User Avatar">
+                <span>Admin User</span>
+            </div>
+        </nav>
+
+        <main class="content">
+            <header>
+                <div class="header-content">
+                    <h1>Deshwal Waste Management</h1>
+                    <div class="user-actions">
+                        <button class="btn"><i class="fas fa-bell"></i></button>
+                        <button class="btn"><i class="fas fa-user"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="section active">
+                    <h2>Dashboard</h2>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-box"></i></div>
+                            <div class="stat-info">
+                                <h3>Total Pickups</h3>
+                                <p class="stat-value">124</p>
+                                <p class="stat-change positive">+12% from last week</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-weight"></i></div>
+                            <div class="stat-info">
+                                <h3>Total Weight</h3>
+                                <p class="stat-value">1,250 kg</p>
+                                <p class="stat-change positive">+5% from last week</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-money-bill-wave"></i></div>
+                            <div class="stat-info">
+                                <h3>Total Value</h3>
+                                <p class="stat-value">₹45,000</p>
+                                <p class="stat-change positive">+8% from last week</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                            <div class="stat-info">
+                                <h3>Pending Items</h3>
+                                <p class="stat-value">12</p>
+                                <p class="stat-change negative">+2 from last week</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="charts-container">
+                        <div class="chart-card">
+                            <h3>Material Distribution</h3>
+                            <canvas id="materialChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Weekly Pickups</h3>
+                            <canvas id="pickupChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="recent-pickups">
+                        <h3>Recent Pickups</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Pickup ID</th>
+                                    <th>Client</th>
+                                    <th>Date</th>
+                                    <th>Products</th>
+                                    <th>Total Weight</th>
+                                    <th>Total Value</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PU001</td>
+                                    <td>ABC Electronics</td>
+                                    <td>2023-07-15</td>
+                                    <td>5</td>
+                                    <td>120 kg</td>
+                                    <td>₹12,500</td>
+                                    <td><span class="status complete">Complete</span></td>
+                                    <td><button class="btn-small">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>PU002</td>
+                                    <td>XYZ Corp</td>
+                                    <td>2023-07-14</td>
+                                    <td>3</td>
+                                    <td>85 kg</td>
+                                    <td>₹8,200</td>
+                                    <td><span class="status complete">Complete</span></td>
+                                    <td><button class="btn-small">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>PU003</td>
+                                    <td>Tech Solutions</td>
+                                    <td>2023-07-13</td>
+                                    <td>7</td>
+                                    <td>210 kg</td>
+                                    <td>₹18,900</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td><button class="btn-small">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Material Entry Section -->
+                <section id="material-entry" class="section">
+                    <h2>Material Entry</h2>
+                    <div class="form-container">
+                        <form id="materialEntryForm">
+                            <div class="form-group">
+                                <h3>Pickup Information</h3>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="pickupId">Pickup ID</label>
+                                        <input type="text" id="pickupId" placeholder="Auto-generated" readonly>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="pickupDate">Pickup Date</label>
+                                        <input type="date" id="pickupDate" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="clientName">Client Name</label>
+                                        <input type="text" id="clientName" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="clientContact">Client Contact</label>
+                                        <input type="text" id="clientContact" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Vehicle Details</h3>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="vehicleNumber">Vehicle Number</label>
+                                        <input type="text" id="vehicleNumber" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="driverName">Driver Name</label>
+                                        <input type="text" id="driverName" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="vehicleCharges">Vehicle Charges (₹)</label>
+                                        <input type="number" id="vehicleCharges" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="labourCharges">Labour Charges (₹)</label>
+                                        <input type="number" id="labourCharges" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Material Details</h3>
+                                <div id="materialEntries">
+                                    <div class="material-entry">
+                                        <div class="form-row">
+                                            <div class="form-field">
+                                                <label for="productId1">Product ID</label>
+                                                <input type="text" id="productId1" placeholder="Auto-generated" readonly>
+                                            </div>
+                                            <div class="form-field">
+                                                <label for="materialType1">Material Type</label>
+                                                <select id="materialType1" required>
+                                                    <option value="">Select Material Type</option>
+                                                    <option value="laptop">Laptop</option>
+                                                    <option value="desktop">Desktop</option>
+                                                    <option value="server">Server</option>
+                                                    <option value="charger">Charger</option>
+                                                    <option value="monitor">Monitor</option>
+                                                    <option value="keyboard">Keyboard</option>
+                                                    <option value="mouse">Mouse</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-field">
+                                                <label for="quantity1">Quantity</label>
+                                                <input type="number" id="quantity1" min="1" required>
+                                            </div>
+                                            <div class="form-field">
+                                                <label for="weight1">Weight (kg)</label>
+                                                <input type="number" id="weight1" step="0.01" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-field">
+                                                <label for="unitPrice1">Unit Price (₹)</label>
+                                                <input type="number" id="unitPrice1" step="0.01" required>
+                                            </div>
+                                            <div class="form-field">
+                                                <label for="totalValue1">Total Value (₹)</label>
+                                                <input type="number" id="totalValue1" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-field full-width">
+                                                <label for="condition1">Condition/Quality</label>
+                                                <select id="condition1" required>
+                                                    <option value="">Select Condition</option>
+                                                    <option value="excellent">Excellent</option>
+                                                    <option value="good">Good</option>
+                                                    <option value="fair">Fair</option>
+                                                    <option value="poor">Poor</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" id="addMaterialBtn" class="btn">Add Another Material</button>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Document Upload</h3>
+                                <div class="form-row">
+                                    <div class="form-field full-width">
+                                        <label for="invoice">Invoice/Bill</label>
+                                        <input type="file" id="invoice">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-field full-width">
+                                        <label for="productDocs">Product Documents</label>
+                                        <input type="file" id="productDocs" multiple>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn primary">Save Entry</button>
+                                <button type="button" class="btn">Generate GRM Report</button>
+                                <button type="reset" class="btn">Clear Form</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- GRM Reports Section -->
+                <section id="reports" class="section">
+                    <h2>GRM Reports</h2>
+                    <div class="report-filters">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="reportPickupId">Pickup ID</label>
+                                <input type="text" id="reportPickupId">
+                            </div>
+                            <div class="form-field">
+                                <label for="reportDateFrom">Date From</label>
+                                <input type="date" id="reportDateFrom">
+                            </div>
+                            <div class="form-field">
+                                <label for="reportDateTo">Date To</label>
+                                <input type="date" id="reportDateTo">
+                            </div>
+                            <div class="form-field">
+                                <label for="reportClient">Client</label>
+                                <input type="text" id="reportClient">
+                            </div>
+                            <button class="btn primary">Generate Report</button>
+                        </div>
+                    </div>
+
+                    <div class="report-preview">
+                        <div class="report-header">
+                            <h3>GRM Report: PU001</h3>
+                            <div class="report-meta">
+                                <p><strong>Client:</strong> ABC Electronics</p>
+                                <p><strong>Date:</strong> 2023-07-15</p>
+                                <p><strong>Status:</strong> <span class="status complete">Complete (100%)</span></p>
+                            </div>
+                        </div>
+
+                        <div class="report-summary">
+                            <div class="summary-card">
+                                <h4>Total Products</h4>
+                                <p>5</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>Total Weight</h4>
+                                <p>120 kg</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>Total Value</h4>
+                                <p>₹12,500</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>Labour Charges</h4>
+                                <p>₹1,200</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>Grand Total</h4>
+                                <p>₹13,700</p>
+                            </div>
+                        </div>
+
+                        <div class="report-details">
+                            <h4>Product Details</h4>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product ID</th>
+                                        <th>Material Type</th>
+                                        <th>Quantity</th>
+                                        <th>Weight (kg)</th>
+                                        <th>Unit Price (₹)</th>
+                                        <th>Total Value (₹)</th>
+                                        <th>Condition</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>P1</td>
+                                        <td>Laptop</td>
+                                        <td>2</td>
+                                        <td>5.2</td>
+                                        <td>3,500</td>
+                                        <td>7,000</td>
+                                        <td>Good</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P2</td>
+                                        <td>Desktop</td>
+                                        <td>1</td>
+                                        <td>12.5</td>
+                                        <td>2,500</td>
+                                        <td>2,500</td>
+                                        <td>Fair</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P3</td>
+                                        <td>Server</td>
+                                        <td>1</td>
+                                        <td>18.3</td>
+                                        <td>3,000</td>
+                                        <td>3,000</td>
+                                        <td>Excellent</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="report-actions">
+                            <button class="btn"><i class="fas fa-print"></i> Print Report</button>
+                            <button class="btn"><i class="fas fa-file-pdf"></i> Export as PDF</button>
+                            <button class="btn"><i class="fas fa-file-excel"></i> Export as Excel</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- File Management Section -->
+                <section id="files" class="section">
+                    <h2>File Management</h2>
+                    <div class="file-upload-container">
+                        <div class="upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>Drag & Drop Files Here</h3>
+                            <p>or</p>
+                            <button class="btn">Browse Files</button>
+                            <input type="file" id="fileUpload" multiple hidden>
+                        </div>
+                    </div>
+
+                    <div class="file-list">
+                        <h3>Uploaded Files</h3>
+                        <div class="file-filters">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="filePickupId">Pickup ID</label>
+                                    <input type="text" id="filePickupId">
+                                </div>
+                                <div class="form-field">
+                                    <label for="fileType">File Type</label>
+                                    <select id="fileType">
+                                        <option value="">All Types</option>
+                                        <option value="invoice">Invoice/Bill</option>
+                                        <option value="product">Product Document</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <button class="btn primary">Filter</button>
+                            </div>
+                        </div>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>File Name</th>
+                                    <th>Related To</th>
+                                    <th>File Type</th>
+                                    <th>Upload Date</th>
+                                    <th>Size</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Invoice_PU001.pdf</td>
+                                    <td>PU001</td>
+                                    <td>Invoice/Bill</td>
+                                    <td>2023-07-15</td>
+                                    <td>245 KB</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Product_Specs_P1.pdf</td>
+                                    <td>PU001</td>
+                                    <td>Product Document</td>
+                                    <td>2023-07-15</td>
+                                    <td>1.2 MB</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Invoice_PU002.pdf</td>
+                                    <td>PU002</td>
+                                    <td>Invoice/Bill</td>
+                                    <td>2023-07-14</td>
+                                    <td>198 KB</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-eye"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-download"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settings" class="section">
+                    <h2>Settings</h2>
+                    <div class="settings-container">
+                        <div class="settings-group">
+                            <h3>User Management</h3>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Full Name</th>
+                                        <th>Role</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>admin</td>
+                                        <td>Admin User</td>
+                                        <td>Administrator</td>
+                                        <td>admin@example.com</td>
+                                        <td><span class="status active">Active</span></td>
+                                        <td>
+                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>staff1</td>
+                                        <td>Staff User</td>
+                                        <td>Staff</td>
+                                        <td>staff@example.com</td>
+                                        <td><span class="status active">Active</span></td>
+                                        <td>
+                                            <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="btn">Add New User</button>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Material Types</h3>
+                            <div class="material-types-list">
+                                <div class="material-type-item">
+                                    <span>Laptop</span>
+                                    <div class="actions">
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                                <div class="material-type-item">
+                                    <span>Desktop</span>
+                                    <div class="actions">
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                                <div class="material-type-item">
+                                    <span>Server</span>
+                                    <div class="actions">
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                                <div class="material-type-item">
+                                    <span>Charger</span>
+                                    <div class="actions">
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                                <div class="material-type-item">
+                                    <span>Monitor</span>
+                                    <div class="actions">
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <input type="text" id="newMaterialType" placeholder="New Material Type">
+                                </div>
+                                <button class="btn">Add</button>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>System Settings</h3>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="companyName">Company Name</label>
+                                    <input type="text" id="companyName" value="Deshwal Waste Management">
+                                </div>
+                                <div class="form-field">
+                                    <label for="companyLogo">Company Logo</label>
+                                    <input type="file" id="companyLogo">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="dateFormat">Date Format</label>
+                                    <select id="dateFormat">
+                                        <option value="dd/mm/yyyy">DD/MM/YYYY</option>
+                                        <option value="mm/dd/yyyy">MM/DD/YYYY</option>
+                                        <option value="yyyy-mm-dd">YYYY-MM-DD</option>
+                                    </select>
+                                </div>
+                                <div class="form-field">
+                                    <label for="currency">Currency Symbol</label>
+                                    <input type="text" id="currency" value="₹">
+                                </div>
+                            </div>
+                            <button class="btn primary">Save Settings</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
