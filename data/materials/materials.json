@@ -208,5 +208,35 @@
     },
     "createdAt": "2025-10-07T11:18:27.610Z",
     "updatedAt": "2025-10-07T11:18:27.610Z"
+  },
+  {
+    "id": "74046c95-9fec-44ba-853f-ff0d61a91ee5",
+    "pickupId": "r78i",
+    "pickupDate": "2025-10-08",
+    "clientName": "sdfgh",
+    "clientContact": "zxcvbn",
+    "vehicleNumber": "dfghjk",
+    "driverName": "sdfghjk34535678",
+    "vehicleCharges": 4567,
+    "labourCharges": 345677,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "4567",
+        "materialType": "charger",
+        "quantity": 3,
+        "weight": 84567,
+        "unitPrice": 567890,
+        "totalValue": 1703670,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 3,
+      "totalWeight": 84567,
+      "totalValue": 1703670
+    },
+    "createdAt": "2025-10-08T06:10:56.209Z",
+    "updatedAt": "2025-10-08T06:10:56.209Z"
   }
 ]

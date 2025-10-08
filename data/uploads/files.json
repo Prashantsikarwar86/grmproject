@@ -68,5 +68,15 @@
     "size": 33260512,
     "mimeType": "application/x-compressed",
     "uploadedAt": "2025-10-07T11:18:27.832Z"
+  },
+  {
+    "id": "d8778734-df98-4abb-b906-cd114cb99d04",
+    "pickupId": "r78i",
+    "fileType": "invoice",
+    "originalName": "Prashantresume (1).pdf",
+    "storedName": "Prashantresume__1__1759903856221_803ab070-eab8-4fef-a904-6035da5664db.pdf",
+    "size": 579987,
+    "mimeType": "application/pdf",
+    "uploadedAt": "2025-10-08T06:10:56.237Z"
   }
 ]
