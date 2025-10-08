@@ -4,17 +4,44 @@ import { useEffect, useState } from 'react'
 
 export default function RootLayout(){
   const location = useLocation()
-  const [theme, setTheme] = useState<'dark'|'light'>(() => (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
 
+  // initialize theme: prefer saved value, then system preference
+  const [theme, setTheme] = useState<'dark'|'light'>(() => {
+    try {
+      const stored = localStorage.getItem('theme')
+      if(stored === 'dark' || stored === 'light') return stored
+    } catch (e) {
+      // ignore
+    }
+    return (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light'
+  })
+
+  // apply theme to document and persist
   useEffect(() => {
     const root = document.documentElement
     if(theme === 'dark') root.classList.add('dark')
     else root.classList.remove('dark')
+
+    try { localStorage.setItem('theme', theme) } catch(e){}
+
+    // update meta theme-color if present (improves appearance on mobile browsers)
+    const meta = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement | null
+    if(meta){
+      meta.content = theme === 'dark' ? '#0f172a' : '#ffffff'
+    }
   }, [theme])
 
+  // listen for system preference changes and update only when user hasn't explicitly chosen
   useEffect(() => {
     const mql = window.matchMedia('(prefers-color-scheme: dark)')
-    const handler = (e: MediaQueryListEvent) => setTheme(e.matches ? 'dark' : 'light')
+    const handler = (e: MediaQueryListEvent) => {
+      try {
+        const stored = localStorage.getItem('theme')
+        if(!stored) setTheme(e.matches ? 'dark' : 'light')
+      } catch(e){
+        setTheme(e.matches ? 'dark' : 'light')
+      }
+    }
     mql.addEventListener('change', handler)
     return () => mql.removeEventListener('change', handler)
   }, [])
