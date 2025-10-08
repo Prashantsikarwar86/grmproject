@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const env = (import.meta as any).env || {}
+const baseFromUrl = env?.VITE_API_BASE_URL || env?.VITE_API_BASE
 export const api = axios.create({
-  baseURL: (import.meta as any).env?.VITE_API_BASE || '/api',
+  baseURL: baseFromUrl || '/api',
 })
 
 export type MaterialItem = {
