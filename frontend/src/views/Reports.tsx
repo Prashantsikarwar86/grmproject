@@ -54,26 +54,26 @@ export default function Reports(){
                 <a className="btn" href={`/api/reports/${r.id}/export.csv`} target="_blank">Export as CSV</a>
               </div>
             </div>
-            <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-5">
+              <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-5">
               <div className="rounded-md bg-zinc-900 p-3">
                 <div className="text-xs text-zinc-400">Total Products</div>
-                <div className="text-xl font-semibold">{r.summary.totals.totalProducts}</div>
+                <div className="text-xl font-semibold">{r.summary?.totals?.totalProducts ?? 0}</div>
               </div>
               <div className="rounded-md bg-zinc-900 p-3">
                 <div className="text-xs text-zinc-400">Total Weight</div>
-                <div className="text-xl font-semibold">{r.summary.totals.totalWeight} kg</div>
+                <div className="text-xl font-semibold">{r.summary?.totals?.totalWeight ?? 0} kg</div>
               </div>
               <div className="rounded-md bg-zinc-900 p-3">
                 <div className="text-xs text-zinc-400">Total Value</div>
-                <div className="text-xl font-semibold">₹{r.summary.totals.totalValue}</div>
+                <div className="text-xl font-semibold">₹{r.summary?.totals?.totalValue ?? 0}</div>
               </div>
               <div className="rounded-md bg-zinc-900 p-3">
                 <div className="text-xs text-zinc-400">Labour Charges</div>
-                <div className="text-xl font-semibold">₹{r.summary.charges.labourCharges}</div>
+                <div className="text-xl font-semibold">₹{r.summary?.charges?.labourCharges ?? 0}</div>
               </div>
               <div className="rounded-md bg-zinc-900 p-3">
                 <div className="text-xs text-zinc-400">Grand Total</div>
-                <div className="text-xl font-semibold">₹{r.summary.grandTotal}</div>
+                <div className="text-xl font-semibold">₹{r.summary?.grandTotal ?? 0}</div>
               </div>
             </div>
           </motion.div>

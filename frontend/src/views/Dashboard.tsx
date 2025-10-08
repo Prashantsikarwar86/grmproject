@@ -12,12 +12,12 @@ export default function Dashboard(){
       {stats ? (
         <>
           {[
-            { label: 'Total Pickups (qty)', value: stats.totals.totalProducts },
-            { label: 'Total Weight', value: `${stats.totals.totalWeight} kg` },
-            { label: 'Total Value', value: `₹${stats.totals.totalValue}` },
-            { label: 'Sold Today', value: stats.today.soldToday },
-            { label: 'Sold Overall', value: stats.soldOverall },
-            { label: 'Inventory Left', value: stats.inventoryLeft },
+            { label: 'Total Pickups (qty)', value: stats?.totals?.totalProducts ?? 0 },
+            { label: 'Total Weight', value: `${stats?.totals?.totalWeight ?? 0} kg` },
+            { label: 'Total Value', value: `₹${stats?.totals?.totalValue ?? 0}` },
+            { label: 'Sold Today', value: stats?.today?.soldToday ?? 0 },
+            { label: 'Sold Overall', value: stats?.soldOverall ?? 0 },
+            { label: 'Inventory Left', value: stats?.inventoryLeft ?? 0 },
           ].map((c,i)=> (
             <motion.div key={i} initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{delay:0.05*i}} className="card p-6">
               <div className="text-sm text-zinc-400">{c.label}</div>
