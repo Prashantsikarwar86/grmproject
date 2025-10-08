@@ -12,17 +12,7 @@ const filesIndexPath = path.join(uploadsDir, 'files.json');
 ensureDirectory(uploadsDir);
 if (!readJsonFile(filesIndexPath)) writeJsonFile(filesIndexPath, []);
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadsDir);
-  },
-  filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    const base = path.basename(file.originalname, ext).replace(/[^a-zA-Z0-9_-]/g, '_');
-    cb(null, `${base}_${Date.now()}_${uuidv4()}${ext}`);
-  }
-});
-
+const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 // List files
@@ -39,24 +29,42 @@ router.post('/', upload.array('files', 10), (req, res) => {
   const list = readJsonFile(filesIndexPath) || [];
   const pickupId = req.body.pickupId || null;
   const fileType = req.body.fileType || 'other';
+  const added = []
+  const { uploadBuffer, bucket } = require('../utils/s3')
 
-  const added = (req.files || []).map(f => {
+  Promise.all((req.files || []).map(async (f) => {
+    const id = uuidv4()
+    const ext = path.extname(f.originalname)
+    const base = path.basename(f.originalname, ext).replace(/[^a-zA-Z0-9_-]/g, '_')
+    let storedName = `${base}_${Date.now()}_${id}${ext}`
+    let url = null
+    if (bucket) {
+      // Upload to S3
+      url = await uploadBuffer(storedName, f.buffer, f.mimetype)
+    } else {
+      // Fallback: save to local disk
+      const fullPath = path.join(uploadsDir, storedName)
+      fs.writeFileSync(fullPath, f.buffer)
+    }
     const meta = {
-      id: uuidv4(),
+      id,
       pickupId,
       fileType,
       originalName: f.originalname,
-      storedName: path.basename(f.path),
+      storedName: url || storedName,
       size: f.size,
       mimeType: f.mimetype,
       uploadedAt: new Date().toISOString()
-    };
-    list.push(meta);
-    return meta;
-  });
-
-  writeJsonFile(filesIndexPath, list);
-  res.status(201).json({ uploaded: added });
+    }
+    list.push(meta)
+    added.push(meta)
+  })).then(() => {
+    writeJsonFile(filesIndexPath, list)
+    res.status(201).json({ uploaded: added })
+  }).catch(err => {
+    console.error('file upload error', err)
+    res.status(500).json({ error: 'Failed to upload files' })
+  })
 });
 
 // Download by id

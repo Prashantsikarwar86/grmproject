@@ -114,7 +114,11 @@ router.post('/', (req, res) => {
   }
 
   list.push(record);
-  writeJsonFile(materialsFilePath, list);
+  const ok = writeJsonFile(materialsFilePath, list);
+  if (!ok) {
+    console.error('Failed to write materials file')
+    return res.status(500).json({ error: 'Failed to save pickup on server' })
+  }
   res.status(201).json(record);
 });
 
