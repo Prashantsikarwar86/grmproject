@@ -1,12 +1,27 @@
 [build]
+  # `base` is the working directory for build commands. With base="frontend",
+  # `publish="dist"` refers to frontend/dist.
   base = "frontend"
   publish = "dist"
   command = "npm run build"
   functions = "netlify/functions"
 
+[build.environment]
+  # Set a Node version for the build. Netlify supports several LTS versions; 18 is a safe default.
+  NODE_VERSION = "18"
+
+[dev]
+  # Settings used by `netlify dev` when running locally
+  command = "npm run dev"
+  functions = "netlify/functions"
+  port = 8888
+  framework = "vite"
+
 [[redirects]]
+  # SPA fallback: serve index.html for all client-side routes
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
 
 
