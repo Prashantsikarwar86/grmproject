@@ -6,11 +6,16 @@ export default function Products(){
   const [q, setQ] = useState('')
 
   useEffect(() => {
-    api.get('/materials', { params: { page: 1, pageSize: 100 } }).then(r => setPickups(r.data.items || r.data))
+    api.get('/materials', { params: { page: 1, pageSize: 100 } }).then(r => {
+      const payload = r?.data?.items ?? r?.data
+      const normalized = Array.isArray(payload) ? payload : (payload ? [payload] : [])
+      setPickups(normalized as Pickup[])
+    }).catch(()=> setPickups([]))
   }, [])
 
   const rows = useMemo(() => {
-    const items = pickups.flatMap(p => p.materials.map(m => ({...m, pickupId: p.pickupId})))
+    // Ensure pickups is an array and each pickup.materials is an array before mapping
+    const items = (Array.isArray(pickups) ? pickups : []).flatMap(p => Array.isArray(p?.materials) ? p.materials.map(m => ({...m, pickupId: p.pickupId})) : [])
     return items.filter(r => {
       const term = q.toLowerCase();
       return !q || r.productId.toLowerCase().includes(term) || (r.materialType||'').toLowerCase().includes(term) || (r.name||'').toLowerCase().includes(term)

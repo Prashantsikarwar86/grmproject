@@ -6,18 +6,30 @@ const COLORS = ['#22c55e', '#06b6d4', '#f59e0b', '#ef4444', '#a78bfa']
 
 export default function Analytics(){
   const [pickups, setPickups] = useState<Pickup[]>([])
-  useEffect(()=>{ api.get('/materials', { params: { page: 1, pageSize: 200 } }).then(r=>setPickups(r.data.items || r.data)) },[])
+  useEffect(()=>{
+    api.get('/materials', { params: { page: 1, pageSize: 200 } }).then(r=>{
+      // Normalize API response to an array. API may return { items: [...] } or a single object.
+      const payload = r?.data?.items ?? r?.data
+      const normalized = Array.isArray(payload) ? payload : (payload ? [payload] : [])
+      setPickups(normalized as Pickup[])
+    }).catch(()=>{
+      setPickups([])
+    })
+  },[])
 
+  // Safely flatten materials; ensure materials is an array for each pickup
   const typeData = Object.values(
-    pickups.flatMap(p=>p.materials).reduce((acc:any, m)=>{
-      acc[m.materialType] = acc[m.materialType] || { name: m.materialType||'other', value: 0 }
-      acc[m.materialType].value += m.quantity || 0
-      return acc
-    }, {})
-  )
+    (pickups.flatMap(p => Array.isArray(p.materials) ? p.materials : []) as any[])
+      .reduce((acc:any, m)=>{
+        const key = m?.materialType || 'other'
+        acc[key] = acc[key] || { name: key, value: 0 }
+        acc[key].value += Number(m?.quantity || 0)
+        return acc
+      }, {})
+  ) as { name: string; value: number }[]
 
   const days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
-  const lineData = days.map((d,i)=> ({ name: d, value: (pickups[i]?.totals.totalProducts ?? 0) }))
+  const lineData = days.map((d,i)=> ({ name: d, value: (pickups[i]?.totals?.totalProducts ?? 0) }))
 
   const counters = {
     products: pickups.reduce((s,p)=> s + (p.totals.totalProducts||0), 0),
@@ -33,7 +45,7 @@ export default function Analytics(){
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie data={typeData} dataKey="value" nameKey="name" outerRadius={90}>
-                {typeData.map((_, i)=> <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
+                {(Array.isArray(typeData) ? typeData : []).map((_, i)=> <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
               </Pie>
             </PieChart>
           </ResponsiveContainer>
