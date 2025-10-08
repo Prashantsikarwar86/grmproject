@@ -6,7 +6,10 @@ export default function Reports(){
   const [pickupId, setPickupId] = useState('')
   const [reports, setReports] = useState<any[]>([])
 
-  useEffect(()=>{ api.get('/reports').then(r=>setReports(r.data)) },[])
+  useEffect(()=>{ api.get('/reports').then(r=>{
+    const payload = r?.data ?? []
+    setReports(Array.isArray(payload) ? payload : [payload])
+  }) },[])
 
   async function generate(){
     if(!pickupId) return
@@ -40,7 +43,7 @@ export default function Reports(){
         </div>
       </motion.div>
       <div className="grid gap-4 md:grid-cols-2">
-        {reports.map((r)=> (
+  {(Array.isArray(reports) ? reports : []).map((r)=> (
           <motion.div key={r.id} initial={{opacity:0,y:8}} animate={{opacity:1,y:0}} className="card p-4">
             <div className="flex items-center justify-between">
               <div>

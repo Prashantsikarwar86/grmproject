@@ -46,8 +46,9 @@ export default function Dashboard(){
             {stats && (
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Pie data={Object.entries(stats.byType).map(([name,value])=>({name,value}))} dataKey="value" nameKey="name" outerRadius={90}>
-                    {Object.keys(stats.byType).map((_, i)=> <Cell key={i} fill={["#22c55e","#06b6d4","#f59e0b","#ef4444","#a78bfa"][i%5]} />)}
+                  {/* Ensure byType is an object before mapping */}
+                  <Pie data={Object.entries(stats?.byType || {}).map(([name,value])=>({name,value}))} dataKey="value" nameKey="name" outerRadius={90}>
+                    {(Object.keys(stats?.byType || {}) || []).map((_, i)=> <Cell key={i} fill={["#22c55e","#06b6d4","#f59e0b","#ef4444","#a78bfa"][i%5]} />)}
                   </Pie>
                 </PieChart>
               </ResponsiveContainer>

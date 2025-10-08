@@ -18,8 +18,11 @@ export default function Analytics(){
   },[])
 
   // Safely flatten materials; ensure materials is an array for each pickup
+  // Ensure pickups is an array and materials is present before flattening
+  const safePickups = Array.isArray(pickups) ? pickups : []
+  const flattenedMaterials = safePickups.flatMap(p => Array.isArray(p?.materials) ? p.materials : []) as any[]
   const typeData = Object.values(
-    (pickups.flatMap(p => Array.isArray(p.materials) ? p.materials : []) as any[])
+    (Array.isArray(flattenedMaterials) ? flattenedMaterials : [])
       .reduce((acc:any, m)=>{
         const key = m?.materialType || 'other'
         acc[key] = acc[key] || { name: key, value: 0 }
