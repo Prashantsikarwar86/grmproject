@@ -51,7 +51,10 @@ export default function Pickup(){
       }
       alert('Pickup saved successfully')
     }catch(err:any){
-      alert('Failed to save pickup')
+      console.error('save pickup error', err)
+      // Try to show server error message when available
+      const serverMsg = err?.response?.data?.error || err?.response?.data?.message || err?.message
+      alert('Failed to save pickup: ' + (serverMsg || 'Unknown error'))
     }finally{
       setSaving(false)
     }
