@@ -238,5 +238,228 @@
     },
     "createdAt": "2025-10-08T06:10:56.209Z",
     "updatedAt": "2025-10-08T06:10:56.209Z"
+  },
+  {
+    "id": "49242eb8-7f6b-4d71-9425-0c42b29bf7d7",
+    "pickupId": "876788",
+    "pickupDate": "2025-10-08",
+    "clientName": "ertyuikmnhv",
+    "clientContact": "rtyuikjh",
+    "vehicleNumber": "456789",
+    "driverName": "dfghj",
+    "vehicleCharges": 566,
+    "labourCharges": 664,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "abc electronic ",
+        "materialType": "laptop",
+        "quantity": 500,
+        "weight": 998,
+        "unitPrice": 6000,
+        "totalValue": 3000000,
+        "condition": ""
+      },
+      {
+        "productId": "P2",
+        "name": "abc ",
+        "materialType": "desktop",
+        "quantity": 700,
+        "weight": 689,
+        "unitPrice": 4000,
+        "totalValue": 2800000,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 1200,
+      "totalWeight": 1687,
+      "totalValue": 5800000
+    },
+    "createdAt": "2025-10-08T10:56:17.917Z",
+    "updatedAt": "2025-10-08T10:56:17.917Z"
+  },
+  {
+    "id": "0d512e74-255d-450a-b8d4-86716249f5a0",
+    "pickupId": "123432",
+    "pickupDate": "2025-10-08",
+    "clientName": "dfghjk",
+    "clientContact": "2345678",
+    "vehicleNumber": "2345678",
+    "driverName": "qwerghjk",
+    "vehicleCharges": 775,
+    "labourCharges": 4663,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "abc ",
+        "materialType": "laptop",
+        "quantity": 100,
+        "weight": 786,
+        "unitPrice": 6788,
+        "totalValue": 678800,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 100,
+      "totalWeight": 786,
+      "totalValue": 678800
+    },
+    "createdAt": "2025-10-08T10:58:24.354Z",
+    "updatedAt": "2025-10-08T10:58:24.354Z"
+  },
+  {
+    "id": "c02f0a9a-4ada-40c9-93b2-52f8844d711d",
+    "pickupId": "66666",
+    "pickupDate": "2025-10-09",
+    "clientName": "ertyuio",
+    "clientContact": "erthjk",
+    "vehicleNumber": "34567890",
+    "driverName": "34567890",
+    "vehicleCharges": 45678,
+    "labourCharges": 3456787,
+    "materials": [
+      {
+        "productId": "P1",
+        "name": "345678",
+        "materialType": "mouse",
+        "quantity": 145678,
+        "weight": 789,
+        "unitPrice": 100,
+        "totalValue": 14567800,
+        "condition": ""
+      }
+    ],
+    "totals": {
+      "totalProducts": 145678,
+      "totalWeight": 789,
+      "totalValue": 14567800
+    },
+    "createdAt": "2025-10-09T12:09:28.524Z",
+    "updatedAt": "2025-10-09T12:09:28.524Z"
+  },
+  {
+    "id": "b2a5271f-2acd-46df-94b6-f12ca518c159",
+    "pickupId": "PICKUP-20251010-0006",
+    "company_name": "Enhanced Test Corp",
+    "lot_number": "LOT-20251010-005",
+    "pickupDate": "2025-01-25",
+    "pickupStatus": "pending",
+    "clientName": "Enhanced Test Corp",
+    "clientContact": "9876543210",
+    "clientEmail": "test@enhanced.com",
+    "clientAddress": "123 Test Street",
+    "clientCity": "Test City",
+    "clientState": "TS",
+    "clientZipCode": "12345",
+    "clientCountry": "India",
+    "vehicleNumber": "ENH001",
+    "driverName": "Enhanced Driver",
+    "driverLicense": "DL123456789",
+    "driverContact": "9876543210",
+    "vehicleCharges": 1500,
+    "labourCharges": 2000,
+    "totalCharges": 3500,
+    "paymentStatus": "pending",
+    "paymentMethod": "cash",
+    "invoiceNumber": "INV001",
+    "pickupLocation": "Client Office",
+    "deliveryLocation": "Warehouse",
+    "warehouseLocation": "Main Warehouse",
+    "processingStatus": "pending",
+    "priority": "high",
+    "assignedTo": "John Doe",
+    "department": "Operations",
+    "materials": [
+      {
+        "company_name": "Enhanced Test Corp",
+        "lot_number": "LOT-20251010-005",
+        "pickup_id": "PICKUP-20251010-0006",
+        "productId": "P1",
+        "materialType": "laptop",
+        "category": "electronics",
+        "subcategory": "computers",
+        "brand": "Dell",
+        "model": "Inspiron 15",
+        "serialNumber": "DL123456",
+        "description": "Used laptop in good condition",
+        "specifications": "Intel i5, 8GB RAM, 256GB SSD",
+        "quantity": 2,
+        "weight": 2.5,
+        "unitPrice": 5000,
+        "totalValue": 10000,
+        "dimensions": "35x25x2 cm",
+        "color": "black",
+        "condition": "good",
+        "grade": "A",
+        "quality": "excellent",
+        "location": "Warehouse A",
+        "warehouse": "Main Warehouse",
+        "shelf": "A1",
+        "bin": "B2",
+        "status": "received",
+        "priority": "normal",
+        "assignedTo": "John Doe",
+        "receivedDate": "2025-01-25",
+        "processedDate": null,
+        "lastUpdated": "2025-10-10T05:33:39.496Z",
+        "tags": [
+          "electronics",
+          "laptop",
+          "recyclable"
+        ],
+        "notes": "Good condition laptop",
+        "images": [],
+        "documents": [],
+        "hazardous": false,
+        "safetyNotes": "",
+        "complianceStatus": "pending",
+        "costCenter": "IT001",
+        "department": "IT",
+        "projectCode": "PROJ001",
+        "vendor": "Tech Corp",
+        "vendorContact": "vendor@tech.com",
+        "purchaseOrder": "",
+        "invoiceNumber": "",
+        "recyclable": true,
+        "disposalMethod": "",
+        "environmentalImpact": "",
+        "customFields": {}
+      }
+    ],
+    "totals": {
+      "totalProducts": 2,
+      "totalWeight": 2.5,
+      "totalValue": 10000
+    },
+    "safetyCheck": true,
+    "complianceStatus": "approved",
+    "hazardousMaterials": false,
+    "environmentalImpact": "low",
+    "recyclingPotential": "high",
+    "disposalMethod": "recycle",
+    "qualityCheck": true,
+    "qualityGrade": "A",
+    "inspectionNotes": "Passed all quality checks",
+    "documents": [
+      "invoice.pdf",
+      "warranty.pdf"
+    ],
+    "images": [
+      "laptop1.jpg",
+      "laptop2.jpg"
+    ],
+    "certificates": [
+      "quality_cert.pdf"
+    ],
+    "customFields": {
+      "internalCode": "INT001",
+      "specialInstructions": "Handle with care"
+    },
+    "createdAt": "2025-10-10T05:33:39.496Z",
+    "updatedAt": "2025-10-10T05:33:39.496Z",
+    "processedAt": null,
+    "completedAt": null
   }
 ]

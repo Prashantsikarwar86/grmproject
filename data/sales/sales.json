@@ -34,5 +34,23 @@
     "materialType": "desktop",
     "name": null,
     "date": "2025-10-07T08:34:49.377Z"
+  },
+  {
+    "id": "e57450b7-d911-4b7f-9e6e-0bcdcd77f8e9",
+    "pickupId": "pu786",
+    "productId": "pi675",
+    "quantitySold": 1100,
+    "materialType": "laptop",
+    "name": null,
+    "date": "2025-10-08T11:00:28.558Z"
+  },
+  {
+    "id": "4beab698-7df3-4304-8a38-b3ce673a0ca4",
+    "pickupId": "675yu5",
+    "productId": "pu8975",
+    "quantitySold": 674,
+    "materialType": "laptop",
+    "name": "electronics ",
+    "date": "2025-10-09T08:43:12.423Z"
   }
 ]

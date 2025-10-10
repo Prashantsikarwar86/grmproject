@@ -1,0 +1,37 @@
+[
+  {
+    "id": "e5ec87ea-4f16-4775-921d-e914fce0e203",
+    "lot_number": "LOT-20251010-001",
+    "company_name": "ABC Electronics",
+    "created_at": "2025-10-10T05:12:00.445Z",
+    "updated_at": "2025-10-10T05:12:00.445Z"
+  },
+  {
+    "id": "dffc2b4b-75b3-425e-923e-e9443917ce42",
+    "lot_number": "LOT-20251010-002",
+    "company_name": "XYZ Corporation",
+    "created_at": "2025-10-10T05:12:00.450Z",
+    "updated_at": "2025-10-10T05:12:00.450Z"
+  },
+  {
+    "id": "bc40e2a0-0d20-45fa-8fc7-34d5400a8b81",
+    "lot_number": "LOT-20251010-003",
+    "company_name": "Test Company",
+    "created_at": "2025-10-10T05:12:22.063Z",
+    "updated_at": "2025-10-10T05:12:22.063Z"
+  },
+  {
+    "id": "6065046e-2948-4ee3-9a06-15d5bbdfab7c",
+    "lot_number": "LOT-20251010-004",
+    "company_name": "Demo Corp",
+    "created_at": "2025-10-10T05:20:30.748Z",
+    "updated_at": "2025-10-10T05:20:30.748Z"
+  },
+  {
+    "id": "e5aaefad-d23f-476e-a4e1-a09583ae928c",
+    "lot_number": "LOT-20251010-005",
+    "company_name": "Enhanced Test Corp",
+    "created_at": "2025-10-10T05:33:32.125Z",
+    "updated_at": "2025-10-10T05:33:32.125Z"
+  }
+]

@@ -78,5 +78,15 @@
     "size": 579987,
     "mimeType": "application/pdf",
     "uploadedAt": "2025-10-08T06:10:56.237Z"
+  },
+  {
+    "id": "f37ad65f-d161-423b-a0a3-bf39319a2d04",
+    "pickupId": "66666",
+    "fileType": "invoice",
+    "originalName": "prashant-singh-251008AXYE011096.pdf",
+    "storedName": "prashant-singh-251008AXYE011096_1760011769460_f37ad65f-d161-423b-a0a3-bf39319a2d04.pdf",
+    "size": 221559,
+    "mimeType": "application/pdf",
+    "uploadedAt": "2025-10-09T12:09:29.461Z"
   }
 ]

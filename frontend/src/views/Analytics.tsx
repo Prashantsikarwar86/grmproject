@@ -33,7 +33,6 @@ export default function Analytics(){
 
   const days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
   const lineData = days.map((d,i)=> ({ name: d, value: (pickups[i]?.totals?.totalProducts ?? 0) }))
-
   const counters = {
     products: pickups.reduce((s,p)=> s + (p.totals?.totalProducts ?? 0), 0),
     weight: pickups.reduce((s,p)=> s + (p.totals?.totalWeight ?? 0), 0),

@@ -12,6 +12,8 @@ const analyticsRoutes = require('./routes/analytics');
 const authRoutes = require('./routes/auth');
 const session = require('express-session');
 const salesRoutes = require('./routes/sales');
+const pickupRoutes = require('./routes/pickups');
+const lotRoutes = require('./routes/lots');
 
 // Initialize express app
 const app = express();
@@ -41,6 +43,8 @@ app.use('/api/reports', reportRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/sales', salesRoutes);
+app.use('/api/pickups', pickupRoutes);
+app.use('/api/lots', lotRoutes);
 
 // Fallback: Serve index.html for any other route (SPA-style)
 app.get('*', (req, res) => {

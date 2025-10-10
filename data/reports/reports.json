@@ -58,5 +58,25 @@
       },
       "grandTotal": 11200
     }
+  },
+  {
+    "id": "89767-1759921032488",
+    "pickupId": "89767",
+    "createdAt": "2025-10-08T10:57:12.488Z",
+    "summary": {
+      "pickupId": "89767",
+      "pickupDate": "2025-10-07",
+      "clientName": "Narendra  enterprises ",
+      "totals": {
+        "totalProducts": 200,
+        "totalWeight": 568,
+        "totalValue": 11200
+      },
+      "charges": {
+        "vehicleCharges": 0,
+        "labourCharges": 0
+      },
+      "grandTotal": 11200
+    }
   }
 ]
